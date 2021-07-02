@@ -490,7 +490,7 @@ numpy.seterr(divide='ignore', invalid='ignore')
 spec[:, :, 0]=(img[:, :, li.index("pre8")].astype("float")-img[:, :, li.index("pre12")])/(img[:, :, li.index("pre8")]+img[:, :, li.index("pre12")])
 spec[:, :, 1]=(img[:, :, li.index("pos8")].astype("float")-img[:, :, li.index("pos12")])/(img[:, :, li.index("pos8")]+img[:, :, li.index("pos12")])
 spec[:, :, 2]=spec[:, :, 1]-spec[:, :, 0]
-array_spec=spec[:, :, 2]=spec[:, :, 1]-spec[:, :, 0]
+array_spec=spec[:, :, 0]-spec[:, :, 1]
 
 
 specmask=(numpy.isnan(spec)|numpy.isinf(spec)).copy()
