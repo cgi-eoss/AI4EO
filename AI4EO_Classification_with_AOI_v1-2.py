@@ -520,7 +520,7 @@ img = img_ds.ReadAsArray()
 
 img = img.transpose(1, 2, 0)
 li = ("pre4", "pre8", "pre12", "pos4", "pos8", "pos12")
-mask2d = (img == (-9999)).any(axis=2)
+mask2d=(img==(-9999)).any(axis=2)|(img==(0)).any(axis=2)
 # spectral indices
 spec = numpy.zeros((img_ds.RasterYSize, img_ds.RasterXSize, 3))
 numpy.seterr(divide='ignore', invalid='ignore')
