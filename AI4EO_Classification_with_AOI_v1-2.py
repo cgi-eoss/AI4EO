@@ -585,6 +585,20 @@ driver = ogr.GetDriverByName("ESRI Shapefile")
 if os.path.exists(flnmshp):
     driver.DeleteDataSource(flnmshp)
 
+proba=rf.predict_proba(Xtp)
+#proba[:,0] for burned, and proba[:,1] for unburned
+probal = proba[:,0]
+probamap=probal.reshape(img.shape[:2]).astype("float")
+probamap[maa!=0]=maa[maa!=0]
+mask2d[maa==2]=maa[maa==2]
+probamap[mask2d]=2 
+probras=indir+"/"+ss_1+"_"+predate+"_"+ss_2+"_"+postdate+"_"+tile+"_"+ronum+"_ba_proba.tif"
+array=probamap
+path=probras
+geotransform=img_ds.GetGeoTransform()
+projection=img_ds.GetProjection()
+save_array_as_image(array, path, geotransform, projection, format = "GTiff")
+
 array = array_spec
 path = indir + "/" + ss_1 + "_" + predate + "_" + ss_2 + "_" + postdate + "_" + tile + "_" + ronum + "_dnbr.tif"
 geotransform = img_ds.GetGeoTransform()
