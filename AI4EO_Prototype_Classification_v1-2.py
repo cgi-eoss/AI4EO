@@ -321,7 +321,7 @@ daysss=[]
 tiledays=[]
 for x in pkltiles:
 	spectile=str(x)
-	tileday=spectile.split("S")[0]
+	tileday=spectile.split("S2")[0]
 	tiledays.append(tileday)
 	days=spectile.split("_")[1]
 	dayss=int(days)
