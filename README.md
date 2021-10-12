@@ -1,5 +1,5 @@
 # AI4EO
-The AI4EO project is an ESA funded project led by CGI partnered with the
+The AI4EO project is an ESA funded project led by CGI, partnering with the
 University of Leicester. The project is focussing on developing and demonstrating
 a burned area (BA) mapping service that combines EO data, specifically Sentinel-2
 optical data, with an AI-enabled algorithm.
@@ -14,11 +14,12 @@ The output products are:
 This service is offered as a on-demand service on the [EO4SD Lab
 ](https://eo4sd-lab.net/).
 
-###Requirements
+**Requirements:**
 - Sen2Cor version 2.9.0 - http://step.esa.int/main/snap-supported-plugins/sen2cor/sen2cor-v2-9/
 - Python For Earth Observation library (pyeo) - https://github.com/clcr/pyeo
 
-###Usage
+**Usage:**
+
 Any downloaded Sentinel-2 images (e.g. from SciHub) will be in .zip
 format which should be extracted manually to get the. SAFE format.
 
